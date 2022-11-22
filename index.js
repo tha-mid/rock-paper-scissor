@@ -39,6 +39,7 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
 
         console.log('It is a Draw!');
+        return 0;
 
     } else if ((playerSelection == 'Rock' && computerSelection == 'Paper')      ||
                (playerSelection == 'Paper' && computerSelection == 'Scissor')   ||
@@ -57,4 +58,46 @@ function playRound(playerSelection, computerSelection){
     
 }
 
+function game(){
 
+    let playerPoints = 0;
+    let computerPoints = 0;
+    let winner;
+
+    for (let i = 0; i < 5; i++){
+
+        let playerSelection = cleanPlayerSelection(prompt("Choose between Rock, Paper and Scissor"));
+        let computerSelection = getComputerChoice();
+
+        if (playerSelection != 'Rock' && playerSelection != 'Paper' && playerSelection != 'Scissor') {
+            console.log('invalid selection, input again');
+            i--;
+        } else {
+            
+            console.log('Match Number ' + (i + 1) );
+            console.log('You choose:' + playerSelection);
+            console.log('Computer choose:' + computerSelection);
+
+            winner = playRound(playerSelection, computerSelection);
+
+            if (winner == 1) {
+                computerPoints++;
+            } else if (winner == 2 ) {
+                playerPoints++;
+            }
+            
+            console.log('Player points:' + playerPoints + ' / Computer points:' + computerPoints);            
+        }
+    }
+
+    if (computerPoints > playerPoints) {
+        console.log('With ' + computerPoints + ' points, Computer won the game!');
+    } else if (playerPoints > computerPoints ) {
+        console.log('With ' + playerPoints + ' points, You won the game!');
+    } else {
+        console.log('It is a draw! Both have ' + playerPoints + ' points.');
+    }
+
+}
+
+game();
