@@ -100,4 +100,4 @@ function game(){
 
 }
 
-game();
+/*game();*/
