@@ -36,6 +36,9 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection){
 
+    console.log('You choose:' + playerSelection);
+    console.log('Computer choose:' + computerSelection);
+    
     if (playerSelection === computerSelection) {
 
         console.log('It is a Draw!');
@@ -58,46 +61,74 @@ function playRound(playerSelection, computerSelection){
     
 }
 
-function game(){
+//function game(){
 
-    let playerPoints = 0;
-    let computerPoints = 0;
+    let pPoints = 0;
+    let cPoints = 0;
     let winner;
 
-    for (let i = 0; i < 5; i++){
+    console.log('start');
 
-        let playerSelection = cleanPlayerSelection(prompt("Choose between Rock, Paper and Scissor"));
-        let computerSelection = getComputerChoice();
+    let playerSelection; // = cleanPlayerSelection(prompt("Choose between Rock, Paper and Scissor"));
+    //let computerSelection = getComputerChoice();
 
-        if (playerSelection != 'Rock' && playerSelection != 'Paper' && playerSelection != 'Scissor') {
-            console.log('invalid selection, input again');
-            i--;
-        } else {
+    //console.log('computerSelection ' + getComputerChoice());
+
+    document.getElementById('rock').addEventListener("click", function() {
+        playerSelection = 'Rock';
+        winner = playRound('Rock', getComputerChoice());
+        keepScore(winner);
+    });
+    document.getElementById('paper').addEventListener("click", function() {
+        playerSelection = 'Paper';
+        winner = playRound('Paper', getComputerChoice());
+        keepScore(winner);
+    });
+    document.getElementById('scissor').addEventListener("click", function() {
+        playerSelection = 'Scissor';
+        winner = playRound('Scissor', getComputerChoice());
+        keepScore(winner);
+    });
+
+    // if (winner == 1) {
+    //     cPoints++;
+    // } else if (winner == 2 ) {
+    //     pPoints++;
+    // }
             
-            console.log('Match Number ' + (i + 1) );
-            console.log('You choose:' + playerSelection);
-            console.log('Computer choose:' + computerSelection);
+    //console.log('Player points:' + pPoints + ' / Computer points:' + cPoints);            
+        
+    
 
-            winner = playRound(playerSelection, computerSelection);
+    // if (cPoints == 5) {
+    //     console.log('Computer won the game!');
+    // } else if (pPoints == 5) {
+    //     console.log('You won the game!');
+    // } else {
+    //     console.log('It is a draw! Both have ' + pPoints + ' points.');
+    // }
 
-            if (winner == 1) {
-                computerPoints++;
-            } else if (winner == 2 ) {
-                playerPoints++;
-            }
-            
-            console.log('Player points:' + playerPoints + ' / Computer points:' + computerPoints);            
-        }
+//}
+
+//game();
+
+
+function keepScore (winner) {
+
+    if (winner == 1) {
+        cPoints++;
+    } else if (winner == 2 ) {
+        pPoints++;
     }
 
-    if (computerPoints > playerPoints) {
-        console.log('With ' + computerPoints + ' points, Computer won the game!');
-    } else if (playerPoints > computerPoints ) {
-        console.log('With ' + playerPoints + ' points, You won the game!');
-    } else {
-        console.log('It is a draw! Both have ' + playerPoints + ' points.');
+    if (cPoints == 5){
+        console.log('Computer won the game!');
+        cPoints = 0;
+        pPoints = 0;
+    } else if (pPoints == 5) {
+        console.log('You won the game!');
+        cPoints = 0;
+        pPoints = 0;
     }
 
 }
-
-/*game();*/
