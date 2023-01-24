@@ -1,0 +1,78 @@
+body {
+    font-family: 'Urbanist', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: lightblue;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    height: 80px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#rock, #paper, #scissor {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 250px;
+}
+
+#numRound, #round, #score, #result {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#numRound {
+    height: 50px;
+    font-size: 20px;
+    align-items: center;
+}
+
+#result {
+    height: 25px;
+    font-size: 25px;
+}

@@ -14,13 +14,15 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection){
 
-    //let round = document.getElementById("round");
+    if (numRound == 0) {
+        document.getElementById("result").innerHTML = '';
+    }
 
     console.log('You choose:' + playerSelection);
     console.log('Computer choose:' + computerSelection);
     numRound++;
 
-    document.getElementById("numRound").innerHTML = 'Round number ' + numRound;
+    document.getElementById("numRound").innerHTML = 'Round ' + numRound;
     
     if (playerSelection === computerSelection) {
 
@@ -68,13 +70,17 @@ function keepScore (winner) {
     if (cPoints == 5){
         console.log('Computer won the game!');
         document.getElementById("result").innerHTML = 'Computer won the game!';
+        document.getElementById("result").style.color = "red";
         cPoints = 0;
         pPoints = 0;
+        numRound = 0;
     } else if (pPoints == 5) {
         console.log('You won the game!');
         document.getElementById("result").innerHTML = 'You won the game!';
+        document.getElementById("result").style.color = "green";
         cPoints = 0;
         pPoints = 0;
+        numRound = 0;
     }
 
 }

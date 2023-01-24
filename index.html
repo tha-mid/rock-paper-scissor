@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Urbanist&display=swap" rel="stylesheet">
     
 </head>
 <body>
-
-    <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissor</button>
+    <div class="header">
+        Rock Paper Scissor Game
     </div>
 
-    <div class="output">
-        <div id="numRound"></div>
-        <div id="round"></div>
-        <div id="score"></div>
-        <div id="result"></div>
+    <div class="content">
+
+        <div class="buttons">
+            <div id="rock">Rock</div>
+            <div id="paper">Paper</div>
+            <div id="scissor">Scissor</div>
+        </div>
+
+        <div class="output">
+            <div id="numRound">Round</div>
+            <div id="round">You chose: 
+                        <br>Computer chose:
+                        <br>
+            </div>
+            <div id="score">Your points:
+                        <br>Computer points:
+                        <br>
+            </div>
+            <div id="result"></div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+
     </div>
 
     <script src="index.js"></script>
