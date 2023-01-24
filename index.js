@@ -28,8 +28,9 @@ function playRound(playerSelection, computerSelection){
 
         console.log('It is a Draw!');
         document.getElementById("round").innerHTML = 'You choose: ' + playerSelection +
-                                                     '<br>Computer choose: ' + computerSelection +
-                                                     '<br>It is a Draw!';
+                                                     '<br>Computer choose: ' + computerSelection;
+        document.getElementById("roundResult").innerHTML = 'It is a Draw!';
+        document.getElementById("roundResult").style.color = "black";
 
         return 0;
 
@@ -38,8 +39,9 @@ function playRound(playerSelection, computerSelection){
                (playerSelection == 'Scissor' && computerSelection == 'Rock'))   {
         
         document.getElementById("round").innerHTML = 'You choose: ' + playerSelection +
-                                                     '<br>Computer choose: ' + computerSelection +
-                                                     '<br>You lost! '+ computerSelection +' beats '+ playerSelection;        
+                                                     '<br>Computer choose: ' + computerSelection; 
+        document.getElementById("roundResult").innerHTML = 'You lost! '+ computerSelection +' beats '+ playerSelection;
+        document.getElementById("roundResult").style.color = "red";       
 
         return 1;
 
@@ -48,9 +50,9 @@ function playRound(playerSelection, computerSelection){
                (playerSelection == 'Scissor' && computerSelection == 'Paper'))  {
         
         document.getElementById("round").innerHTML = 'You choose: ' + playerSelection +
-                                                     '<br>Computer choose: ' + computerSelection +
-                                                     '<br>You won! '+ playerSelection +' beats '+ computerSelection;  
-
+                                                     '<br>Computer choose: ' + computerSelection;  
+        document.getElementById("roundResult").innerHTML = 'You won! '+ playerSelection +' beats '+ computerSelection;
+        document.getElementById("roundResult").style.color = "green";                                                    
         return 2;
     }
     
@@ -69,7 +71,7 @@ function keepScore (winner) {
 
     if (cPoints == 5){
         console.log('Computer won the game!');
-        document.getElementById("result").innerHTML = 'Computer won the game!';
+        document.getElementById("result").innerHTML = 'You lost the game!';
         document.getElementById("result").style.color = "red";
         cPoints = 0;
         pPoints = 0;

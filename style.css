@@ -23,8 +23,11 @@ body {
 .footer {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     background-color: lightblue;
     height: 80px;
+    font-size: 10px;
+    color: gray;
 }
 
 .buttons {
@@ -70,6 +73,11 @@ body {
     height: 50px;
     font-size: 20px;
     align-items: center;
+}
+
+#roundResult {
+    height: 18px;
+    font-weight: bold;
 }
 
 #result {
