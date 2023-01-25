@@ -1,10 +1,11 @@
-//user input choice between rock, paper and scissor in a prompt
-//program trim and transform to lowercase
+//user chooses rock, paper and scissor on the interface
+//function playround is exectuted using what user selected and getComputerChoice
 //function getComputerChoice generates a choice between rock, paper and scissor
 //function compare the choices of the the user and the computer
     //the winner gets a point
     //if it`s a draw no one gets a point
-//there's 5 rounds and in the end it's announced the winner
+//the one who gets 5 points first wins the game
+//Interface displays round number, choices, result of the round, points of both players and game winner
 
 function getComputerChoice() {
     const options = ['Rock', 'Paper', 'Scissor'];
@@ -18,15 +19,12 @@ function playRound(playerSelection, computerSelection){
         document.getElementById("result").innerHTML = '';
     }
 
-    console.log('You choose:' + playerSelection);
-    console.log('Computer choose:' + computerSelection);
     numRound++;
 
     document.getElementById("numRound").innerHTML = 'Round ' + numRound;
     
     if (playerSelection === computerSelection) {
 
-        console.log('It is a Draw!');
         document.getElementById("round").innerHTML = 'You choose: ' + playerSelection +
                                                      '<br>Computer choose: ' + computerSelection;
         document.getElementById("roundResult").innerHTML = 'It is a Draw!';
@@ -70,19 +68,21 @@ function keepScore (winner) {
                                                  '<br> CPU points: ' + cPoints;
 
     if (cPoints == 5){
-        console.log('Computer won the game!');
+
         document.getElementById("result").innerHTML = 'You lost the game!';
         document.getElementById("result").style.color = "red";
         cPoints = 0;
         pPoints = 0;
         numRound = 0;
+
     } else if (pPoints == 5) {
-        console.log('You won the game!');
+        
         document.getElementById("result").innerHTML = 'You won the game!';
         document.getElementById("result").style.color = "green";
         cPoints = 0;
         pPoints = 0;
         numRound = 0;
+
     }
 
 }
@@ -92,9 +92,7 @@ function keepScore (winner) {
     let numRound = 0;
     let winner;
 
-    console.log('start');
-
-    let playerSelection; // = cleanPlayerSelection(prompt("Choose between Rock, Paper and Scissor"));
+    let playerSelection;
 
     document.getElementById('rock').addEventListener("click", function() {
         playerSelection = 'Rock';
